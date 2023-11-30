@@ -11,7 +11,6 @@ public class MessageHandler {
         } else if (message.hasText()) {
             TextHandler.handle(message, bot);
         } else if ( message.hasPhoto()){
-            System.out.println("hasPhoto");
             PhotoHandler.handle(message, bot);
         } else if (message.hasContact()) {
 

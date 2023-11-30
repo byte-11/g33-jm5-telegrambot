@@ -73,4 +73,25 @@ public class ButtonUtils {
             )))
             .resizeKeyboard(true)
             .build();
+
+    public static InlineKeyboardMarkup buildProductMarkup(int quantity, long productId) {
+        return InlineKeyboardMarkup.builder()
+                .keyboardRow(List.of(
+                        InlineKeyboardButton.builder().text("-")
+                                .callbackData("-;" + quantity + ";" + productId)
+                                .build(),
+                        InlineKeyboardButton.builder().text(String.valueOf(quantity))
+                                .callbackData("number")
+                                .build(),
+                        InlineKeyboardButton.builder().text("+")
+                                .callbackData("+;" + quantity + ";" + productId)
+                                .build()
+                ))
+                .keyboardRow(
+                        List.of(
+                                InlineKeyboardButton.builder().text("Add To Basket 🧺")
+                                        .callbackData("basket;" + productId + ";" + quantity).build()
+                        )
+                ).build();
+    }
 }

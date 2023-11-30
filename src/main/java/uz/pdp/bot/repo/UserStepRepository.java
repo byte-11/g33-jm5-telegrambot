@@ -9,6 +9,7 @@ import java.util.Map;
 public class UserStepRepository {
     private static final Map<Long, UserStepEnum> STEPS = new HashMap<>();
 
+
     public static void setStep(final Long id, final UserStepEnum step) {
         STEPS.put(id, step);
     }
